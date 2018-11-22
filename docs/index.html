@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <!-- Importamos el archivo .css para el estilo -->
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <title> Bienvenido a MundoHoteles</title>
+</head>
+
+<body>
+    <header>
+        <div class="hcont">
+            <!-- En el header hacemos un contenedor general -->
+            <div class="logo">
+                <!-- A continuación otro contenedor para la imagen, que a su vez esta englobado en un link -->
+                <a href="index.html">
+                    <!-- En concreto a la propia pagina de inicio -->
+                    <img src="images/logo.png" alt="logoMundoHoteles">
+                </a>
+            </div>
+            <div class="hlinks">
+                <!-- Ahora creamos un contenedor para los links situados en el header -->
+                <nav class="opts">
+                    <!-- Y dentro de este creamos los links com <a> para acceder a esas zonas de la web en cualquier momanto -->
+                    <a class="actual" href="index.html">Inicio</a>
+                    <div></div> <!-- Esto es un separador visual de cada link -->
+                    <a href="#Hoteles">Hoteles</a>
+                    <div></div> <!-- Otro separador -->
+                    <a href="#Contacto">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Fin de la cabecera -->
+    <!-- Hemos decicido crear un div propio para el contemido central de la web, que se divide a su vez en otros dos contenedores, dcha e izda -->
+    <div class="cont">
+        <div class="dcha"></div>
+        <div class="izda">
+            <!-- Dividimos el contenedor de la izquierda en prof (foto de perfil e informacion), lastOp (muestra las ultimas opiniones) y prefs (que engloba las preferencias del perfil) -->
+            <div class="prof">
+                <div class="imgNam">
+                    <!-- contenedor para la foto de perfil y el nombre del usuario -->
+                    <div class="profImg">
+                        <!-- creamos a su vez otro div para tratar la imagen -->
+                        <img src="images/perfil.jpg" alt="Foto de perfil del usuario">
+                    </div>
+                    <h3 class="name">David</h3> <!-- nombre del perfil -->
+                </div>
+                <div class="desc">
+                    <!-- En este div crearemos una lista paralos elementos importantes del perfil del usuario -->
+                    <h4 class="titInf"> <a href="#infopers">Informacion personal</a></h4> <!-- Sobre el titulo de info, personal creamos un link para su correspondiente pagina asociada -->
+                    <ul class="inf">
+                        <li>País de orígen: España</li>
+                        <li>Miembro desde: 2016</li>
+                        <li>Opiniones totales: 120</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sep"></div> <!-- Separador visual horizontal -->
+
+            <div class="lastOp">
+                <h4><a href="#ultOpin">Últimas opiniones</a></h4> <!-- sobre el titulo de ultimas opiniones creamos un link para su correspondiente pagina -->
+                <div class="opis">
+                    <!-- y hacemos un div para la lista de opiniones -->
+                    <dl>
+                        <dt><a href="#Opinion1">H10 Madison, Barcelona, España</a></dt>
+                        <dd>Ubicación inmejorable para visitar el barrio gótico. La terraza del ático tiene unas vistas impresionantes. Habitaciones muy cómodas...</dd>
+                        <dt><a href="#Opinion2">Becquer, Sevilla, España</a></dt>
+                        <dd>Excelente hotel y atención. Desayuno excelente. Garaje muy cómodo y seguro. Piscina agradable. Personal super amable...</dd>
+                        <dt><a href="#Opinion3">The Vue Hotel, New York, EEUU</a></dt>
+                        <dd>Estaba muy bien comunicado con el metro y a tres paradas de Manhattan. El personal muy eficiente y amable, pendientes de todo...</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="sep"></div> <!-- Otro separador visual horizontal -->
+
+            <div class="prefs">
+                <!-- creamos los correspondientes divs para el titulo de preferencias y estas a su vez -->
+                <div class="titPref">
+                    <div class="tit">
+                        <h4>Mis preferencias</h4>
+                    </div>
+                    <div class="add">
+                        <!-- Este div contiene un caracter que hara las veces de boton con el que se añadirán nuevas preferencias -->
+                        <h4><a href="#NuevoTag">&oplus;</a></h4>
+                    </div>
+                </div>
+                <div class="prefsCh">
+                    <!-- este contenedor tendrá las preferencias como tal, así como su caracter qeu servirá para eliminarlas -->
+                    <div>
+                        Moteles <a href="#EliminarTag">&otimes;</a>
+                    </div>
+                    <div>
+                        Albergues <a href="#EliminarTag">&otimes;</a>
+                    </div>
+                    <div>
+                        Rustico <a href="#EliminarTag">&otimes;</a>
+                    </div>
+                    <div>
+                        Spa <a href="#EliminarTag">&otimes;</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Por ultimo el footer, que contendrá los links a redes sociales y el copyright de la pagina -->
+    <footer>
+        <div class="footCont">
+            <div class="social-cp">
+                <!-- dentro de estos divs mediante links que contienen imagenes hemos creado estos enlaces -->
+                <div class="logoF"><a href="https://www.twitter.com/"><img src="images/tw.png" alt="Twitter"></a></div>
+                <div class="VSep"></div>
+                <div class="logoF"><a href="https://www.facebook.com/"><img src="images/fb.png" alt="Facebook"></a></div>
+                <div class="VSep"></div>
+                <div class="logoF"><a href="#CopyRigth"><img src="images/cp.png" alt="Copyright"></a></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
