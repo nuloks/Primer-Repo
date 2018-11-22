@@ -1,0 +1,929 @@
+/* Para todos los elementos de la web se aplican estos atributos */
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/* Damos fondo al body de la pagina y la eliminamos el margen superior */
+body {
+    background-image: url("../images/fond.jpg");
+    margin-top: 0px;
+}
+
+/* Esta parte equivale al fondo gris transparente del popup */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Diseño del pop up, un poco redondeado con un borde a la izquierda */
+.popupCont {
+    border-radius: 10px;
+    border-left: 5px solid rgb(2, 62, 122);
+    background-color: #fefefe;
+    margin: 0 auto;
+    padding: 20px;
+    width: 60%;
+}
+
+/*añadimos margen izquierdo a los div de las redes sociales */
+.popupCont div div {
+    margin-left: 10px;
+}
+
+/* Damos tamaño a las imagenes de las redes sociales */
+.popupCont div div a img {
+    height: 25px;
+    width: 25px;
+}
+
+/* Estilo de la X que cerrará el popup */
+.cerrarMod {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Hover para la X anteriormente nombrada */
+.cerrarMod:hover,
+.cerrarMod:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Nombre del hotel mostrado en el popup */
+#hnameMod {
+    display: inline-block;
+}
+
+/* Inicialmente los divs con la infomarcion de los hoteles estan ocultas */
+#infoH1,
+#infoH2,
+#infoH3 {
+    display: none;
+}
+
+/* Ajustamos el ancho de las imagenes de los hoteles y ponemos que cuando el raton este por encima de las imagenes sea el estandar */
+.popupCont div img {
+    cursor: default;
+    width: 55%;
+}
+
+/* Propiedades de los p dentro de cada popup */
+#infoH1 p,
+#infoH2 p,
+#infoH3 p {
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Establecemos la letra de la cabecera, los bordes azules redondeados y el color de fondo */
+header {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(233, 234, 248);
+    border-left: 3px solid;
+    border-right: 3px solid;
+    border-bottom: 6px solid;
+    border-color: rgb(2, 62, 122);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    animation-duration: 1s;
+}
+
+/* Margenes y ancho del contenedor de la cabecera */
+.hcont {
+    width: 100%;
+    margin-top: 8px;
+    margin-left: 8px;
+    padding-left: 8px;
+    padding-right: 20px;
+    display: inline-block;
+}
+
+/* Style del div que contendra la imagen del logo */
+.logo {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 100px;
+}
+
+/* establecemos que las imagenes ocupen todo el div en el que estan, y el cambio del cursor para indicar accion*/
+img {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+/* style del div que tendra el menu, ponemos float a la derecha para que
+ este a la dereche de la pagina */
+.hlinks {
+    float: right;
+    width: 25%;
+    display: none;
+    margin-top: 45px;
+}
+
+/* Display y ancho del div principal que contendrá el buscador y el slider */
+.mainpage {
+    display: inline-block;
+    width: 100%;
+}
+
+/* Div concreto que contendrá el buscador (un formulario), al que le damos el estilo ya tipico de la web */
+.buscador {
+    width: 1000px;
+    display: block;
+    background-color: rgb(233, 234, 248);
+    border: 5px solid rgb(2, 62, 122);
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Margen a la derecha a los inputs (text) del formulario */
+.buscCamp {
+    margin-right: 10px;
+}
+
+/* Diseño de los inputs del formulario (incluye el boton) */
+.buscador input {
+    border: 1px solid rgb(2, 62, 122);
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+/* Esto permite que ambas partes del formulario esten en linea */
+#buscLeft,
+#buscRight {
+    display: inline;
+}
+
+/* Le damos un margen al de la derecha */
+#buscRight {
+    margin-left: 15px;
+}
+
+/* Y diseño a sus h3 */
+#buscLeft h3,
+#buscRight h3 {
+    display: inline;
+    margin-right: 5px;
+}
+
+/* Div que contiene las opciones de inicio de sesión y registrarse  */
+.login {
+    float: right;
+    width: 23%;
+    display: block;
+    margin-top: 45px;
+}
+
+/* Div que contiene el formulario de inicio de sesión */
+.formIn {
+    padding-left: 5px;
+}
+
+/* Aplicamos diseño a los inputs del formulario */
+.formIn input {
+    border: 1px solid rgb(2, 62, 122);
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-left: 4px;
+}
+
+/* Modificamos los margenes de h3 en los divs de inicio de sesión y registro */
+.formIn h3,
+.formReg h3 {
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+/* Div que contiene el formulario de registro */
+.formReg {
+    padding-left: 5px;
+}
+
+/* Aplicamos diseño a los inputs del formulario */
+.formReg input {
+    border: 1px solid rgb(2, 62, 122);
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-left: 4px;
+}
+
+/* ponemos la fuente en negrita */
+.opts {
+    font-weight: bold;
+}
+
+/* este es el estilo de los separadores del menu horizontal, destacar el position
+para que se centre con el texto del menu */
+.opts div {
+    display: inline-block;
+    position: absolute;
+    margin-bottom: 4px;
+    width: 3px;
+    height: 22.6px;
+    background-color: black;
+    border-radius: 40%;
+}
+
+/* diseño y separacion que tendra los links del menu, asi como su tamaño de fuente */
+.opts a {
+    cursor: pointer;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 4px;
+    margin-left: 7px;
+    margin-right: -3px;
+}
+
+/* hover para los links, para que cuando pongas el cursor encima se cambie el color
+del fondo */
+.opts a:hover {
+    background-color: rgb(201, 201, 201);
+    color: black;
+}
+
+/* estilo para la pagina de los links en la que estamos, para que tenga un diseño
+diferente con un fondo azul */
+.opts a.actual {
+    background-color: rgb(2, 62, 122);
+    color: white;
+}
+
+/* diseño del div que contiene elmenu horizontal cuando la resolucion
+ se ajusta a la de una tablet */
+.tableHlinks {
+    background-color: rgb(233, 234, 248);
+    margin-top: 5px;
+    border: 4px solid rgb(2, 62, 122);
+    width: 100%;
+    display: none;
+    padding: 10px;
+}
+
+/* estilo de los separadores del menu horizontal */
+.thopts div {
+    display: inline-block;
+    position: absolute;
+    width: 3px;
+    height: 22.6px;
+    background-color: black;
+    border-radius: 40%;
+    margin-left: 3px;
+}
+
+/* diseño y separacion que tendra los links del menu, asi como su tamaño de fuente */
+.thopts a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 4px;
+    margin-left: 7px;
+    margin-right: -3px;
+}
+
+/* hover para los links, para que cuando pongas el cursor encima se cambie el color
+del fondo */
+.thopts a:hover {
+    background-color: rgb(201, 201, 201);
+    color: black;
+}
+
+/* estilo para la pagina de los links en la que estamos, para que tenga un diseño
+diferente con un fondo azul */
+.thopts a.thactual {
+    background-color: rgb(2, 62, 122);
+    color: white;
+}
+
+/*diseño del div que contiene el formulario de iniciar sesion, destacar el ancho y el margen para situarlo en el medio de la web*/
+#iniciar {
+    display: none;
+    width: 300px;
+    border-radius: 5%;
+    margin: auto;
+    border: 5px solid;
+    border-color: rgb(2, 62, 122);
+    background-color: rgb(233, 234, 248);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Cursor pointer para los botones de buscar hotel e iniciar sesión */
+.acceso,
+#buscarhotel {
+    cursor: pointer;
+}
+
+/*diseño del div que contiene el formulario de registro, destacar el ancho y el margen para situarlo en el medio de la web*/
+#registrar {
+    display: none;
+    width: 420px;
+    border-radius: 5%;
+    margin: auto;
+    border: 5px solid;
+    border-color: rgb(2, 62, 122);
+    background-color: rgb(233, 234, 248);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*diseño contendor que contiene los contenedores derecho e izquierdo en los que se divide
+la web, le damos un poco de margen para que no se pegue a los bordes de la pantalla */
+.cont {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 5px auto;
+    display: none
+}
+
+.cont::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* diseño de la caja izquierda, aqui decimos que ocupara el 33% del div que lo contiene
+y le damos el float a la izquierda, bordes y su ancho y un color de fondo */
+.izda {
+    border: 5px solid;
+    border-color: rgb(2, 62, 122);
+    width: 33%;
+    background-color: rgb(233, 234, 248);
+    float: left;
+}
+
+/* diseño del div que contiene la foto de perfil y el nombre del usuario, le damos margen
+para separarlo del container y el display: inline que pone el contenido en linea respetando
+los margenes */
+.imgNam {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 13px;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+/* damos un pequeño borde a la imagen de perfil y las dimensiones que tendra el div
+que contendra la imagen de perfil */
+.profImg {
+    border: 1px solid;
+    border-color: rgb(2, 62, 122);
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-right: 8px;
+}
+
+/* colocamos el nombre del usuario con los margenes deseados al lado de la foto y en negrita */
+.name {
+    font-weight: bold;
+    margin-top: 41px;
+    margin-left: 6px;
+    margin-bottom: 0px;
+}
+
+.imgNam::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* damos las dimensiones al div que contendra todo lo relaciondo con la inf personal */
+.desc {
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+/* colocamos el titulo "informacion personal" en la posicion deseada, 
+con un cambio de forma del cursor para indicar que es un "enlace" */
+.titInf {
+    cursor: pointer;
+    margin-left: 8px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+/* damos el diseño al div que contendra los distintos campos sobre la inf personal */
+.inf {
+    margin-left: 22px;
+    margin-top: 8px;
+}
+
+/* quitamos los puntos a la lista y ajustamos los margenes */
+ul {
+    list-style-type: none;
+    -webkit-padding-start: 15px;
+    -webkit-margin-end: 10px;
+}
+
+/* damos diseño al div que separa los distintos campos del container izquierdo, es un div
+relleno de negro al que le damos una altura y le redondamos los bordes al maximo */
+.sep {
+    height: 4px;
+    width: 85%;
+    background-color: black;
+    margin-left: 7.5%;
+    margin-top: 8px;
+    border-radius: 100%;
+}
+
+/* diseño del container que incluira las ultimas opiniones y su titulo */
+.lastOp {
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+/* Establecemos que todo lo de dentro del container con clase lastOp tenga un margen
+derecho de 8px */
+.lastOp * {
+    margin-right: 8px;
+}
+
+/* Diseño del titulo "Últimas opiniones", con un cambio de forma del cursor para indicar que es un "enlace" */
+.lastOp h4 {
+    cursor: pointer;
+    margin-left: 8px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    display: inline-block;
+}
+
+
+/* Establecemos un diseño al div que contendra las 3 ultimas opiniones */
+.opis {
+    margin-left: 22px;
+    margin-top: 8px;
+}
+
+/* diseño del texto de cada opinión, su tamaño de fuente, justificado y los margenes */
+.opis dd {
+    font-size: 14px;
+    text-align: justify;
+    -webkit-margin-start: 20px;
+    -webkit-margin-end: 8px;
+}
+
+/* quitamos la decoracion a los dt de los nombres de los hoteles y establecemos que cuando se pasa el raton por encima de los nombres
+de los hoteles el raton se transforma en una mano*/
+#primHot,
+#scndHot,
+#thrdHot {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
+
+/* diseño del container que englobara todo lo de preferencias, reducimos el ancho para
+que asi el icono de + que se pondra para añadir preferencias no quede a la derecha del todo */
+.prefs {
+    height: 100%;
+    width: 93%;
+    display: inline-block;
+}
+
+/* diseño del div que contendra el titulo Mis preferencias y el simbolo de añadir */
+.titPref {
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+/* editamos los margenes del titulo Mis Preferencias */
+.titPref h4 {
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+/* Margen izquierdo para el titulo y ponemos que este a la izquierda del container */
+.tit {
+    margin-left: 8px;
+    float: left;
+}
+
+/* ponemos el simbolo de añadir preferencias a la derecha del titulo */
+.add {
+    float: right;
+}
+
+/* le damos el 100% del ancho al div que contendra las distintas preferencias
+elegidas por el usuario */
+.prefsCh {
+    width: 100%;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* este div siempre esta oculto, puesto que es una plantilla para duplicarla, 
+una duplicacion por cada preferencia */
+.plantPref {
+    display: none;
+}
+
+/* cambiamos el display del formulario para que la cruz de elinimar campo se mantenga en la misma linea */
+.plantPref form {
+    display: inline-block;
+}
+
+/* ocultamos el boton de enviar el formulario, para enviarlo por tanto se presionara el enter */
+#botonPref {
+    display: none;
+}
+
+/* ponemos las preferencias a la izquierda para que pueda haber mas de una en la misma
+fila, tambien les ponemos un fondo y borde */
+.prefsCh div {
+    float: left;
+    margin: 13px;
+    padding: 4px;
+    border: 1px solid;
+    border-color: rgb(2, 62, 122);
+    background-color: rgba(91, 129, 167, 0.651);
+}
+
+/* ponemos la cruz de quitar preferencias en negro y en negrita */
+.prefs a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* establecemos que cuando se pase el raton por encima de alguna cruz se vea un
+fondo grisaceo redondeado */
+.prefs a:hover {
+    background-color: rgb(201, 201, 201);
+    color: black;
+    border-radius: 100%;
+}
+
+/* damos el 100% de altura al menu de inf personal, ult opiniones... que se vera en el modo tablet,
+en este caso establecemos el display en none para que cuando estemos a una resolución de ordenador
+no aparezca este div */
+.tsite {
+    display: none;
+    padding-left: 10px;
+}
+
+/* establecemos que todo este menu estara a la izquierda */
+.tsite * {
+    float: left;
+}
+
+/* modificamos las palabras de los menus, sus margenes el color y le añadimos un padding
+por todos los lados */
+.tsite h5 {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-right: 5px;
+    color: white;
+    padding: 6px;
+    margin-left: 5px;
+}
+
+/* damos diseños a los links de estos menus */
+.tsite h5 a {
+    text-decoration: none;
+    color: white;
+}
+
+/* este es el diseño de las barras laterales que separan los distintos menus, les establecemos
+su altura, un color blanco y cierto redondeado */
+.tsite div {
+    display: inline-block;
+    width: 3px;
+    height: 22.6px;
+    background-color: white;
+    border-radius: 40%;
+}
+
+/* ponemos un subrayado en la pagina en la que nos encontramos */
+.tsite h5 a.siteActual {
+    text-decoration: underline;
+}
+
+/* establecemos que el container derecho tiene que ocupar el 66% del ancho, le damos un fondo
+y un bordo y establecemos que tiene que estar a la derecha de la pagina */
+.dcha-p {
+    border: 5px solid;
+    border-color: rgb(2, 62, 122);
+    width: 66%;
+    background-color: rgb(233, 234, 248);
+    float: right;
+    height: 100%;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    display: none;
+}
+
+/* establecemos un margen izquierdo para los titulos */
+.dcha-p h2 {
+    margin-left: 20px;
+}
+
+/* damos margen izquierdo y altura al div que contiene los formularios
+y establecemos el ancho de este div en auto, para que se adapte a su contenido */
+.formu {
+    margin-left: 40px;
+    width: auto;
+    display: inline-block;
+}
+
+/* damos diseño a las cajas de los formularios, un borde redondeado, padding y margenes */
+.formu input {
+    border: 1px solid rgb(2, 62, 122);
+    border-radius: 4px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+/* establecemos una anchura para el mail, para que asi varie en funcion de la anchura de
+la pagina */
+.mail {
+    width: 97.75%;
+}
+
+/* Damos un margen izdo por estetica*/
+.merits {
+    margin-left: 20px;
+}
+
+/* Este div se corresponde con la forma circular que se ve en la web, los cuales les damos un display
+para que esten en la misma linea (y en bloque al disminuir el ancho), les damos un tamaño cuadrado y
+los bordeamos completamente para que tenga esa forma caracteristica  */
+.merit {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(201, 201, 201);
+    border: 3px solid rgb(2, 62, 122);
+    border-radius: 100%;
+    margin: 5px;
+}
+
+/* Esto corresponde al estilo de las palabras (titulos) dentro de los circulos, que se encontraran centradas  */
+.merit h5 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Esta clase se corresponde con las puntuaciones en sí, que tendran más tamaño */
+.numberM {
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+
+/* establecemos que el container derecho tiene que ocupar el 66% del ancho, le damos un fondo
+y un bordo y establecemos que tiene que estar a la derecha de la pagina */
+.dcha-o {
+    border: 5px solid;
+    border-color: rgb(2, 62, 122);
+    width: 66%;
+    background-color: rgb(233, 234, 248);
+    float: right;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: none;
+}
+
+/* Este será el diseño de las cajas que tendran las opiniones dentro, le damos un borde, 
+un ancho (del 100% para aprovechar todo el container) y padding */
+.caja {
+    border: 2px solid rgb(2, 62, 122);
+    width: 100%;
+    padding: 20px;
+    padding-top: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Diseño del div que contendra la foto del hotel y su información */
+.imgD {
+    width: 100%;
+    display: inline-block;
+}
+
+/* Container de la imagen, donde le damos las dimensiones a esta, ademas de un borde
+y margenes, la flotamos a la izquierda para que aparezca el nombre al lado */
+.placeImg {
+    border: 1px solid;
+    border-color: rgb(2, 62, 122);
+    width: 233px;
+    height: 175px;
+    margin-right: 8px;
+    margin-top: 6px;
+    float: left;
+}
+
+/* Justficiamos el texto de las opiniones */
+.caja p {
+    text-align: justify;
+    margin-top: 24px;
+    margin-bottom: 0px;
+}
+
+/* Ponemos en el centro el icono de cargar mas */
+.more {
+    text-align: center;
+}
+
+/* Quitamos la decoracion al icono de cargar mas y lo ponemos de color negro */
+.more h1 a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Indicamos que cuando se pase el raton por encima del icono de cargar mas, se vera un
+fondo grisaceo redondeado */
+.more h1 a:hover {
+    background-color: rgb(201, 201, 201);
+    color: black;
+    border-radius: 100%;
+}
+
+/* Seccion de la web orientada al pie de la pagina, dondole borde (menos abajo) y curvandolo en las esquinas superiores 
+dandole el color ya usado en el resto de la web*/
+footer {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top: 6px solid;
+    border-left: 3px solid;
+    border-right: 3px solid;
+    border-color: rgb(2, 62, 122);
+    background-color: rgb(233, 234, 248);
+}
+
+/* Este es el div que ocupará todo el footer y contendrá el resto de elementos 
+en una disposición determinada */
+.footCont {
+    width: 100%;
+    display: inline-block;
+}
+
+/* De nuevo otro div que contendrá los enlaces de los elementos sociales de la pagina 
+y el copyright de esta, y que en si flotará a la derecha */
+.social-cp {
+    margin-right: 5px;
+    float: right;
+    margin-top: 3px;
+    margin-bottom: -3px;
+}
+
+/* Todos los contenedores deben seguir la misma disposición */
+.social-cp div {
+    display: inline-block;
+}
+
+/* Tamaño fijo para las imagenes de los links */
+.logoF {
+    height: 25px;
+    width: 25px;
+}
+
+/* Tamaño y color para las separaciones de los links del footer */
+.VSep {
+    background-color: black;
+    width: 3px;
+    height: 22.6px;
+    border-radius: 40%;
+}
+
+/* Div que se encuentra en el footer, que solo se mostrara en el modo movil */
+.mFoot {
+    width: 100%;
+    display: none;
+}
+
+/* Los tres contenedores de dentro tienen la misma anchura 33%, y el texto de dentro estará centrado */
+.mFoot div {
+    width: 33%;
+    text-align: center;
+    float: left;
+}
+
+/* Todas las imagenes contenidas tendran el mismo tamaño cuadrado */
+.mFoot div h6 a img {
+    height: 40px;
+    width: 40px;
+    margin-bottom: 3px;
+}
+
+/* Todo el texto mantendrá el mismo margen dentro del div */
+.mFoot div h6 {
+    margin-bottom: 2px;
+    margin-top: 5px;
+}
+
+/* El texto de los links será negro y sin subrayado */
+.mFoot div h6 a {
+    text-decoration: none;
+    color: black;
+}
+
+/*Esto seran los diseños usados para la resolucion de tablets*/
+@media only screen and (max-width: 768px) {
+
+    /*En este caso modificamos los containers, el ancho al 100% y para que este uno
+debajo del otro quitamos el float */
+    .dcha,
+    .izda {
+        width: 100%;
+        float: none;
+    }
+
+    /*Modificamos el container izquierdo, le quitamos el borde y le ponemos el color de la letra
+para que el nombre del usuario salga en blanco*/
+    .izda {
+        background-color: transparent;
+        border: none;
+        color: white;
+    }
+
+    /* Modficamos el borde de la foto de perfil para que se vea un poco mas ancho */
+    .profImg {
+        border: 3px solid;
+        border-color: rgb(2, 62, 122);
+        background-color: transparent;
+    }
+
+    /*Añadimos padding al container derecho (container inferior) para que haya espacio
+ entre el container izquierdo y este  */
+    .dcha {
+        padding-top: 20px;
+    }
+
+    /* Ocultamos los elementos que no necesitamos en el modo tablet */
+    .hlinks,
+    .inf,
+    .lastOp,
+    .prefs,
+    .sep,
+    .inp,
+    .izda h4 {
+        display: none;
+    }
+
+    /* Mostramos los diseños de las tablets definidos mas arriba, los cuales estaban
+ocultos */
+    .tableHlinks,
+    .tsite {
+        display: inline-block;
+    }
+}
+
+/* Estos seran los diseños utilizados para la resolución del modo móvil */
+@media only screen and (max-width: 600px) {
+
+    /* Ocultamos los elementos del modo tablet que no necesitamos en el modo móvil */
+    .footCont,
+    .tableHlinks,
+    .tsite {
+        display: none;
+    }
+
+    /* Mostramos la barra de navegación del modo móvil  */
+    .mFoot {
+        display: inline-block;
+    }
+
+    /* Ajustamos el ancho del formulario email */
+    .mail {
+        width: auto;
+    }
+}

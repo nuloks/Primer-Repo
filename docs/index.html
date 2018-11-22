@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Javascript/jquery-3.3.1.min.js"></script> <!-- Importamos el archivo .js para poder usar jQuery -->
+    <script src="Javascript/scripts.js"></script> <!-- Importamos nuestro archivo .js para poder implementar funciones propias -->
+    <!-- Importamos otros dos .js que contienen toda la configuración necesaria que hace funcionar nuestro slider de fotos (plugin)-->
+    <script src="Javascript/modernizr.custom.46884.js"></script>
+    <script src="Javascript/jquery.slicebox.js"></script>
+    <!-- Importamos el archivo correspondiente .css para el estilo, el de slicebox(plugin slides), y el animate que le utilizamos para animar ciertos divs a traves de una clase concreta-->
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/slicebox.css">
+    <link rel="stylesheet" type="text/css" href="style/animate.css">
+    <title> Bienvenido a MundoHoteles</title>
+</head>
+
+<body>
+
+    <div id="hotel1" class="modal">
+        <!-- Contenido del pop-up -->
+        <div class="popupCont animated fadeIn faster">
+            <span class="cerrarMod">&times;</span> <!-- La X que cierra el popup -->
+            <h3 id="hnameMod">Hotel name</h3> <!-- El nombre del hotel que será modificado por jQuery -->
+            <div id="infoH1">
+                <!-- Div del hotel 1 -->
+                <img src="images/terr.jpg" alt="Imagen del hotel"> <!-- Imagen alternativa del hotel -->
+                <br>
+                <!-- Dirección del hotel con enlace a goggle maps -->
+                <p>Dirección:</p>
+                <a href="https://goo.gl/maps/SMN9b3gpFpS2" target="_blank">C/ Dr. Joaquim Pou, 2-4-6</a>
+                <br>
+                <!-- Link a la pagina web del hotel -->
+                <a href="https://www.h10hotels.com/es/hoteles-barcelona/h10-madison" target="_blank"> Página web del hotel </a>
+                <br>
+                <!-- Datos del hotel -->
+                <p>Telefono: </p>
+                (+34) 900 444 466
+                <br>
+                Fantástico hotel de 4 *S en el centro de Barcelona. Terraza con preciosas vistas. Wi-Fi gratis. Botella de agua gratis. Reserva segura. Cancelación gratuita.
+                <br>
+                <p>Opinión:</p>
+                <br>
+                Ubicación inmejorable para visitar el barrio gótico. La terraza del ático tiene unas vistas impresionantes. Habitaciones muy cómodas y personal de recepción muy competente y amable. Volveremos.
+                <br>
+                <p>Redes Sociales:</p>
+                <div>
+                    <a href="https://twitter.com/h10hotels" target="_blank"><img src="images/tw.png" alt="Twitter"></a>
+                    <a href="https://www.facebook.com/H10.Hotels" target="_blank"><img src="images/fb.png" alt="Facebook"></a>
+                </div>
+            </div>
+            <div id="infoH2">
+                <img src="images/bec-pisci.jpg" alt="Imagen del hotel"> <!-- Imagen alternativa del hotel -->
+                <br>
+                <!-- Dirección del hotel con enlace a goggle maps -->
+                <p>Dirección:</p>
+                <a href="https://goo.gl/maps/DKVPX2fiL8r" target="_blank">C/ Reyes Católicos, 4</a>
+                <br>
+                <!-- Link a la pagina web del hotel -->
+                <a href="https://www.hotelbecquer.com/" target="_blank"> Página web del hotel </a>
+                <br>
+                <!-- Datos del hotel -->
+                <p>Telefono: </p>
+                (+34) 954 228 900
+                <br>
+                El Hotel Bécquer se encuentra en el centro histórico de Sevilla, a 300 metros de la Plaza Nueva. Ofrece habitaciones con aire acondicionado y WiFi gratuita.
+                <br>
+                <p>Opinión:</p>
+                <br>
+                Excelente hotel y atención. Desayuno excelente. Garaje muy cómodo y seguro. Piscina agradable. Personal super amable, además el wifi es rápido. En general muy bien, pero lo mejor sin duda es la ubicación.
+                <br>
+                <p>Redes Sociales:</p>
+                <div>
+                    <a href="https://twitter.com/@hotelbecquer_" target="_blank"><img src="images/tw.png" alt="Twitter"></a>
+                    <a href="https://www.facebook.com/HotelBecquer" target="_blank"><img src="images/fb.png" alt="Facebook"></a>
+                </div>
+            </div>
+
+            <div id="infoH3">
+                <img src="images/vue.jpg" alt="Imagen del hotel"> <!-- Imagen alternativa del hotel -->
+                <br>
+                <!-- Dirección del hotel con enlace a goggle maps -->
+                <p>Dirección:</p>
+                <a href="https://goo.gl/maps/NHQ5xCS1TcQ2" target="_blank">40-47 22nd St, Long Island City, NY</a>
+                <br>
+                <!-- Link a la pagina web del hotel -->
+                <a href="http://www.thevuehotel.com/" target="_blank"> Página web del hotel </a>
+                <br>
+                <!-- Datos del hotel -->
+                <p>Telefono: </p>
+                +1 (929) 208-0006
+                <br>
+                El The Vue Hotel, goza de una ubicación privilegiada en el centro de Queens, a 1,7 km del parque estatal Gantry Plaza.
+                <br>
+                <p>Opinión:</p>
+                <br>
+                Estaba muy bien comunicado con el metro y a tres paradas de Manhattan. El personal muy eficiente y amable, pendientes de todo. El desayuno incluido en el precio era muy variado con productos de calidad.
+                <br>
+                <p>Redes Sociales:</p>
+                <div>
+                    <a href="https://www.facebook.com/The-Vue-Hotel-an-Ascend-Hotel-Collection-Member-1922574144625616" target="_blank"><img src="images/fb.png" alt="Facebook"></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <header>
+        <div class="hcont">
+            <!-- En el header hacemos un contenedor general -->
+            <div class="logo animated fadeInDown faster">
+                <!-- A continuación otro contenedor para la imagen, que a su vez esta englobado en un script -->
+                <!-- En concreto a la propia pagina de inicio -->
+                <img id="logoImg" src="images/logo.png" alt="logoMundoHoteles">
+
+            </div>
+            <div class="hlinks">
+                <!-- Ahora creamos un contenedor para los links situados en el header -->
+                <nav class="opts">
+                    <!-- Y dentro de este creamos los links com <> para acceder a esas zonas de la web en cualquier momanto -->
+                    <a id="homeTag">Inicio</a>
+                    <div></div> <!-- Esto es un separador visual de cada link -->
+                    <a href="#Hoteles">Hoteles</a>
+                    <div></div> <!-- Otro separador -->
+                    <a id="logout">Cerrar Sesion</a>
+                </nav>
+            </div>
+            <div class="login">
+                <nav class="opts">
+                    <!-- Y dentro de este creamos los links com <> para acceder a esas zonas de la web en cualquier momanto -->
+                    <a id="login">Iniciar Sesion</a>
+                    <div></div> <!-- Esto es un separador visual de cada link -->
+                    <a id="register">Registrarse</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Fin de la cabecera -->
+    <div class="tableHlinks">
+        <!-- Este div aparecera y contendra los links de la cabecera cuando la web cambie a modo tablet (768px) -->
+        <div class="thlinks">
+            <nav class="thopts">
+                <!-- Cuenta con un menú de navegación con los links correspondientes -->
+                <a class="thactual" href="index.html">Inicio</a>
+                <div></div> <!-- Separador vertical -->
+                <a href="#Hoteles">Hoteles</a>
+                <div></div> <!-- Separador vertical -->
+                <a href="#Contacto">Contacto</a>
+            </nav>
+        </div>
+    </div>
+    <!-- Div de la pagina principal, donde se encuentra el buscador y el slider de fotos -->
+    <div id="mainpage">
+        <div class="buscador">
+            <div id="buscLeft">
+                <h3> Nombre del Hotel: </h3>
+                <input class="buscCamp" type="search" id="namehotel"> <!-- Input para el nombre del hotel -->
+            </div>
+            <div id="buscRight">
+                <h3>Localización: </h3>
+                <input class="buscCamp" type="search" id="nameubic"> <!-- Input para la ubicacion -->
+            </div>
+            <input type="button" id="buscarhotel" value="Buscar">
+        </div>
+        <!-- dentro del div se encuentra una lista no ordenada que contiene la foto del hotel y sus descripcion, cada li sera un hotel del slider
+        la clase se tiene que ser wrapper como indica el plugin-->
+        <div class="wrapper">
+            <!-- Los a tienen las imagenes del hotel y los div con clase sb-description contendran su descripcion, esta es la forma que pide el plugin -->
+            <ul id="sb-slider" class="sb-slider">
+                <li>
+                    <a><img class="sliderimages" src="images/bar.jpg"></a>
+
+                    <div class="sb-description">
+                        <h3>H10 Madison, Barcelona, España</h3>
+                        Fantástico hotel de 4 *S en el centro de Barcelona. Terraza con preciosas vistas. Wi-Fi gratis. Botella de agua gratis. Reserva segura. Cancelación gratuita.
+                    </div>
+                </li>
+                <li><a><img class="sliderimages" src="images/bec-pisci.jpg"></a>
+                    <div class="sb-description">
+                        <h3>Becquer, Sevilla, España</h3>
+                        El Hotel Bécquer se encuentra en el centro histórico de Sevilla, a 300 metros de la Plaza Nueva. Ofrece habitaciones con aire acondicionado y WiFi gratuita.
+                    </div>
+                </li>
+                <li><a><img class="sliderimages" src="images/vue.jpg"></a>
+                    <div class="sb-description">
+                        <h3>The Vue Hotel, New York, EEUU</h3>
+                        El The Vue Hotel, goza de una ubicación privilegiada en el centro de Queens, a 1,7 km del parque estatal Gantry Plaza.
+                    </div>
+                </li>
+            </ul>
+            <!-- Input para las flechas de siguiente y atras del slider -->
+            <div id="nav-arrows" class="nav-arrows">
+                <a href="#">Next</a>
+                <a href="#">Previous</a>
+            </div>
+        </div>
+    </div>
+    <!-- Div del formulario del inicio de sesion -->
+    <div id="iniciar" class="animated flipInY faster">
+        <div class="formIn">
+            <form>
+                <!-- Formulario de inicio de sesion -->
+                <h3>Inicia Sesión</h3>
+                <input type="email" id="email" placeholder="Email"> <!-- Input para el correo -->
+                <br>
+                <input type="password" id="contraseña" placeholder="Contraseña"> <!-- Input para la contraseña -->
+                <br>
+                <input id="enterPage" class="acceso" type="button" value="Acceder"> <!-- Boton para acceder a la web -->
+            </form>
+        </div>
+    </div>
+    <!-- Div del formulario de registro -->
+    <div id="registrar" class="animated flipInY faster">
+        <div class="formReg">
+            <form id="IdregFrom">
+                <h3>Información de la cuenta</h3>
+                Nombre de Usuario
+                <input type="text" id="UserN" required> <!-- Input para el nombre de usuario -->
+                <br>
+                Contraseña
+                <!-- Input password para la contraseña, donde se limita la longitud y los caracteres a usar y se especifica un mensaje de ayuda-->
+                <input type="password" id="UsPass" pattern="[a-z0-9].{3,8}" title="La contraseña debe tener entre 4 y 8 carácteres, admite números y letras minísculas" required>
+                <h3>Información personal</h3>
+                Nombre
+                <input type="text" id="UsNombre" required> <!-- Input para el nombre de pila-->
+                <br>
+                Apellidos
+                <input type="text" id="UsApell" required> <!-- Input para los apellidos -->
+                <br>
+                Email
+                <!-- Input email para el correo electronico, donde se limita el formato de este siendo example@dominio.extension y se especifica un mensaje de ayuda-->
+                <input type="email" id="UsEmail" pattern="[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{1,}$" title="El email debe seguir el formato nombre@dominio.extensión" required>
+                <br>
+                Fecha de Nacimiento
+                <input type="date" id="UsBorn" required> <!-- Input date para la fecha de nacimiento-->
+                <br>
+                Imagen de Perfil
+                <input type="file" id="UsProf"> <!-- Input file para la foto de perfil -->
+                <br>
+                Dirección
+                <input type="text" id="UsAdd" required> <!-- Input para la direccion postal -->
+                <br>
+                He leído y acepto las Condiciones de uso
+                <input class="acceso" type="checkbox" id="UsCond" required> <!-- Checkbox para afirmar que se ha leido las condiciones de uso-->
+                <br>
+                <input class="acceso" type="button" id="newUs" name="UsSave" value="Guardar">
+                <input class="acceso" type="reset" name="UsBorrar" value="Borrar">
+            </form>
+        </div>
+
+    </div>
+    <!-- Hemos decicido crear un div propio para el contemido central de la web, que se divide a su vez en otros dos contenedores, dcha e izda -->
+    <div class="cont">
+        <div class="izda animated fadeInLeft faster">
+            <!-- Dividimos el contenedor de la izquierda en prof (foto de perfil e informacion), lastOp (muestra las ultimas opiniones) y prefs (que engloba las preferencias del perfil) -->
+            <div class="prof">
+                <div class="imgNam">
+                    <!-- contenedor para la foto de perfil y el nombre del usuario -->
+                    <div class="profImg">
+                        <!-- creamos a su vez otro div para tratar la imagen -->
+                        <img id="fotoPerfil" src="images/perfil.jpg" alt="Foto de perfil del usuario">
+                    </div>
+                    <h3 class="name" id="NombreUser">David</h3> <!-- nombre del perfil -->
+                </div>
+                <div class="desc">
+                    <!-- En este div crearemos una lista paralos elementos importantes del perfil del usuario -->
+                    <h4 id="titInf" class="titInf"> Informacion personal</h4> <!-- Sobre el titulo de info, personal creamos un link para su correspondiente pagina asociada -->
+                    <ul class="inf">
+                        <li>País de orígen: España</li>
+                        <li>Miembro desde: 2018</li>
+                        <li>Opiniones totales: 120</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sep"></div> <!-- Separador visual horizontal -->
+
+            <div class="lastOp">
+                <h4 id="titOpi">Últimas opiniones</h4> <!-- sobre el titulo de ultimas opiniones creamos un link para su correspondiente pagina -->
+                <div class="opis">
+                    <!-- y hacemos un div para la lista de opiniones -->
+                    <dl>
+                        <dt id="primHot">H10 Madison, Barcelona, España</dt>
+                        <dd>Ubicación inmejorable para visitar el barrio gótico. La terraza del ático tiene unas vistas impresionantes. Habitaciones muy cómodas...</dd>
+                        <dt id="scndHot">Becquer, Sevilla, España</dt>
+                        <dd>Excelente hotel y atención. Desayuno excelente. Garaje muy cómodo y seguro. Piscina agradable. Personal super amable...</dd>
+                        <dt id="thrdHot">The Vue Hotel, New York, EEUU</dt>
+                        <dd>Estaba muy bien comunicado con el metro y a tres paradas de Manhattan. El personal muy eficiente y amable, pendientes de todo...</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="sep"></div> <!-- Otro separador visual horizontal -->
+
+            <div class="prefs">
+                <!-- creamos los correspondientes divs para el titulo de preferencias y estas a su vez -->
+                <div class="titPref">
+                    <div class="tit">
+                        <h4>Mis preferencias</h4>
+                    </div>
+                    <div class="add">
+                        <!-- Este div contiene un caracter que hara las veces de boton con el que se añadirán nuevas preferencias -->
+                        <h4><a id="addTag">&oplus;</a></h4>
+                    </div>
+                </div>
+                <div id="prefsCh" class="prefsCh">
+                    <!-- este contenedor tendrá las preferencias como tal, así como su caracter que servirá para eliminarlas -->
+                    <div id="plantPref" class="plantPref animated fadeIn fast">
+                        <form>
+                            <input type="text" readonly required>
+                            <input type="submit">
+                        </form>
+                        <a id="elimTag" class="elimTag">&otimes;</a>
+                    </div>
+
+                    <div id="prefX">
+                        Moteles <a class="elimTag">&otimes;</a>
+                    </div>
+                    <div>
+                        Albergues <a class="elimTag">&otimes;</a>
+                    </div>
+                    <div>
+                        Rustico <a class="elimTag">&otimes;</a>
+                    </div>
+                    <div>
+                        Spa <a class="elimTag">&otimes;</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="tsite">
+            <!-- Este div aparecerá en el modo tablet, y contiene la versión mas basica  de la zona izquierda, con solo los links para navegar por la web -->
+            <h5><a class="siteActual" href="infoP.html">Informacion personal</a></h5>
+            <div></div> <!-- Separador vertical -->
+            <h5><a href="ultOp.html">Últimas opiniones</a></h5>
+            <div></div> <!-- Separador vertical -->
+            <h5>Mis preferencias</h5>
+        </div>
+
+        <div id="dcha-p" class="dcha-p animated fadeInRight faster">
+            <!-- Este es el contenedor de la parte derecha, que contiene un titulo y un formulario -->
+            <h2 class="inp">Información Personal</h2>
+            <div class="formu">
+                <!-- El formulario contiene los campos pedidos implementados con inputs -->
+                <form>
+                    <input type="text" id="fname" placeholder="Nombre"> <!-- Cada campo cuenta con placeholder, que nos parece mas cómodo a la hora de rellenar los campos -->
+                    <input type="text" id="fsurname" placeholder="Apellidos">
+                    <br>
+                    <input class="mail" type="email" id="femail" placeholder="Email">
+                    <br>
+                    <input type="text" id="faddress" placeholder="Direccion">
+                    <input type="tel" id="fphone" placeholder="Movil">
+                    <br>
+                    Nacimiento
+                    <input type="date" id="fnacimiento">
+                    <br>
+                    <input class="acceso" type="button" id="changeUs" value="Guardar">
+                </form>
+            </div>
+
+            <h2>Mi actividad en la Aplicación</h2>
+            <div class="merits">
+                <!-- Este div contendrá las formas que englobarán los meritos obtenidos en la web -->
+                <!-- Cada merito es englobado en un div, que se le dara forma en el estilo -->
+                <div class="merit">
+                    <h5>Puntos</h5>
+                    <h5 class="numberM">280</h5>
+                </div>
+                <div class="merit">
+                    <h5>Nivel</h5>
+                    <h5 class="numberM">10</h5>
+                </div>
+                <div class="merit">
+                    <h5>Opiniones</h5>
+                    <h5 class="numberM">120</h5>
+                </div>
+                <div class="merit">
+                    <h5>Fotos</h5>
+                    <h5 class="numberM">8</h5>
+                </div>
+            </div>
+        </div>
+
+        <div id="dcha-o" class="dcha-o animated fadeInRight faster">
+            <h2>Last Opinions</h2>
+            <!--div para caja opinion 1-->
+            <div class="caja">
+                <!--div para imagen y nombre sitio -->
+                <div class="imgD">
+                    <div class="placeImg">
+                        <!-- Creamos un div propio para la imagen y asi poder tratarla -->
+                        <img src="images/bar.jpg" alt="Foto del H10 Madison">
+                    </div>
+                    <!-- Pnemos la info basica del Hotel -->
+                    <h3 class="nameH">H10 Madison</h3>
+                    <h3 class="city">Barcelona, España</h3>
+                    <h5 class="date">18/08/2018</h5>
+                </div>
+                <!-- y la opinion completa a traves de un parrafo -->
+                <p>Ubicación inmejorable para visitar el barrio gótico. La terraza del ático tiene unas vistas impresionantes.
+                    Habitaciones muy cómodas y personal de recepción muy competente y amable. Volveremos.
+                </p>
+            </div>
+            <!-- Para el resto de opiniones seguimos la misma estructura para poder tratar sus propiedades a la vez en el estilo -->
+            <div class="caja">
+                <div class="imgD">
+                    <div class="placeImg">
+                        <img src="images/sev.jpg" alt="Foto del Hotel Bécquer">
+                    </div>
+                    <h3 class="nameH">Hotel Bécquer</h3>
+                    <h3 class="city">Sevilla, España</h3>
+                    <h5 class="date">02/09/2017</h5>
+                </div>
+                <p>Excelente hotel y atención. Desayuno excelente. Garaje muy cómodo y seguro. Piscina agradable. Personal super amable, además el wifi es rápido.
+                    En general muy bien, pero lo mejor sin duda es la ubicación.
+                </p>
+            </div>
+
+            <div class="more">
+                <!-- Div que contiene un simbolo para cargar mas opiniones -->
+                <h1><a href="#Recargar">&nbsp;&orarr;&nbsp;</a></h1> <!-- implementado mediante anchor -->
+            </div>
+
+        </div>
+    </div>
+    <!-- Por ultimo el footer, que contendrá los links a redes sociales y el copyright de la pagina -->
+    <footer>
+        <div class="footCont">
+            <div class="social-cp">
+                <!-- dentro de estos divs mediante links que contienen imagenes hemos creado estos enlaces -->
+                <div class="logoF"><a href="https://www.twitter.com/"><img src="images/tw.png" alt="Twitter"></a></div>
+                <div class="VSep"></div>
+                <div class="logoF"><a href="https://www.facebook.com/"><img src="images/fb.png" alt="Facebook"></a></div>
+                <div class="VSep"></div>
+                <div class="logoF"><a href="#CopyRigth"><img src="images/cp.png" alt="Copyright"></a></div>
+            </div>
+        </div>
+
+        <div class="mFoot">
+            <!-- Este div aparece solo en el modo movil (600px) y crea un footer mas adaptado a este modo, con mayor tamaño y que unicamente contiene los links de navegación por a web y no la parte social -->
+            <div>
+                <h6><a href="infoP.html"><img src="images/pers.png" alt="Perfil"><br>Perfil</a></h6>
+            </div>
+            <div>
+                <h6><a href="ultOp.html"><img src="images/opi.png" alt="Opiniones"><br>Opiniones</a></h6>
+            </div>
+            <div>
+                <h6><a href="#Preferencias"><img src="images/fav.png" alt="Preferencias"><br>Preferencias</a></h6>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>
